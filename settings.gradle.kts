@@ -23,3 +23,4 @@ rootProject.name = "TrackingCar"
 include(":app")
 include(":design-system")
 include(":domain")
+include(":data")
