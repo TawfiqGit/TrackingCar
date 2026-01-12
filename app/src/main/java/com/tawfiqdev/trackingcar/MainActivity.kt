@@ -5,8 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.rememberNavController
+import com.tawfiqdev.design_system.theme.TrackingCarTheme
 import com.tawfiqdev.trackingcar.navigation.NavHostScreen
-import com.tawfiqdev.trackingcar.ui.theme.TrackingCarTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

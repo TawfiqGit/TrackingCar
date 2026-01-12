@@ -22,9 +22,8 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.tawfiqdev.design_system.icone.AppIcons
-import com.tawfiqdev.design_system.theme.AppColor
-import com.tawfiqdev.design_system.theme.AppColor.RoseSeaShell
-import com.tawfiqdev.design_system.theme.AppColor.White
+import com.tawfiqdev.design_system.theme.Colors
+import com.tawfiqdev.design_system.theme.Colors.RoseSeaShell
 import com.tawfiqdev.design_system.theme.MediumRoundedCornerShape
 
 @Composable
@@ -32,9 +31,9 @@ fun ParkingSearch(modifier: Modifier = Modifier) {
     TextField(
         value = "",
         onValueChange = {},
-        leadingIcon = { AppIcon(
+        leadingIcon = { Icons(
             painter = AppIcons.SearchIcon,
-            tint = AppColor.RoseSpanish
+            tint = Colors.RoseSpanish
         ) },
         placeholder = { Text("Search") },
         singleLine = true,
@@ -65,8 +64,8 @@ fun LocationSearchBar(
             .fillMaxWidth()
             .height(52.dp)
             .clip(MediumRoundedCornerShape),
-        placeholder = { AppText(text = "Location to select", color = AppColor.Black)},
-        leadingIcon = { AppIcon(painter = AppIcons.LocationSelectedIcon, tint = AppColor.GreenRacing) },
+        placeholder = { AppText(text = "Location to select", color = Colors.Black)},
+        leadingIcon = { Icons(painter = AppIcons.LocationSelectedIcon, tint = Colors.GreenRacing) },
         trailingIcon = {
             if (value.isNotEmpty()) {
                 IconButton(onClick = onClear) {
@@ -83,10 +82,10 @@ fun LocationSearchBar(
             }
         ),
         colors = OutlinedTextFieldDefaults.colors(
-            focusedBorderColor = AppColor.GreenRacing,
-            unfocusedBorderColor = AppColor.GreenTeal,
-            disabledBorderColor = AppColor.GreenTeal,
-            errorBorderColor = AppColor.RedDeep
+            focusedBorderColor = Colors.GreenRacing,
+            unfocusedBorderColor = Colors.GreenTeal,
+            disabledBorderColor = Colors.GreenTeal,
+            errorBorderColor = Colors.RedDeep
         )
     )
 }

@@ -8,24 +8,22 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.tawfiqdev.design_system.icone.AppIcons
-import com.tawfiqdev.design_system.theme.AppColor
+import com.tawfiqdev.design_system.theme.Colors
 import com.tawfiqdev.design_system.utils.Baseline3
 import com.tawfiqdev.design_system.utils.Baseline4
-import com.tawfiqdev.design_system.utils.Baseline5
 
 @Composable
 fun SearchSectionHeader(title: String) {
     AppText(
         text = title,
         fontSize = 12.sp,
-        color = AppColor.GreyDark
+        color = Colors.GreyDark
     )
 }
 
@@ -38,15 +36,15 @@ fun SearchResultRow(title: String, subtitle: String, onClick: () -> Unit) {
             .padding(vertical = Baseline4)
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            AppIcon(painter = AppIcons.LocationSelectedIcon, tint = AppColor.GreenRacing)
+            Icons(painter = AppIcons.LocationSelectedIcon, tint = Colors.GreenRacing)
 
             Spacer(Modifier.width(Baseline3))
 
-            AppText(text = title, fontSize = 16.sp, color = AppColor.Black)
+            AppText(text = title, fontSize = 16.sp, color = Colors.Black)
         }
         Spacer(Modifier.height(2.dp))
 
-        AppText(text = subtitle, fontSize = 14.sp, color = AppColor.GreyDark)
+        AppText(text = subtitle, fontSize = 14.sp, color = Colors.GreyDark)
 
         Spacer(modifier = Modifier.padding(top = Baseline3))
     }

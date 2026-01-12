@@ -18,7 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.tawfiqdev.design_system.icone.AppIcons.LocationIcon
 import com.tawfiqdev.design_system.icone.AppIcons.NotificationIcon
-import com.tawfiqdev.design_system.theme.AppColor
+import com.tawfiqdev.design_system.theme.Colors
 import com.tawfiqdev.design_system.utils.Baseline1
 import com.tawfiqdev.design_system.utils.Baseline2
 import com.tawfiqdev.design_system.utils.Baseline5
@@ -33,7 +33,7 @@ fun LocationHeader(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .background(AppColor.GreenRacing)
+            .background(Colors.GreenRacing)
             .padding(horizontal = Baseline5, vertical = Baseline6)
     ) {
         Row(
@@ -44,18 +44,18 @@ fun LocationHeader(
                 modifier = Modifier.weight(1f),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                AppIcon(painter = LocationIcon, tint = AppColor.White)
+                Icons(painter = LocationIcon, tint = Colors.White)
 
                 Spacer(Modifier.width(Baseline2))
 
-                AppText(text = location, color = AppColor.White, onClick = onSelectedLocationClick)
+                AppText(text = location, color = Colors.White, onClick = onSelectedLocationClick)
 
                 Spacer(Modifier.width(Baseline1))
 
-                Text("▾", color = AppColor.White)
+                Text("▾", color = Colors.White)
             }
-            SquareActionButton(modifier = Modifier.size(48.dp), onClick = onNotificationsClick ,color = AppColor.GreenTeal, icon = {
-                AppIcon(painter = NotificationIcon , tint = AppColor.White)
+            SquareActionButton(modifier = Modifier.size(48.dp), onClick = onNotificationsClick ,color = Colors.GreenTeal, icon = {
+                Icons(painter = NotificationIcon , tint = Colors.White)
             })
         }
         Spacer(Modifier.height(Baseline5))
@@ -64,8 +64,8 @@ fun LocationHeader(
             ParkingSearch(
                 modifier = Modifier.weight(1f)
             )
-            SquareActionButton(modifier = Modifier.size(52.dp),color = AppColor.RoseSeaShell, onClick = {}, icon = {
-                AppText(text = "≡", color= AppColor.Black)
+            SquareActionButton(modifier = Modifier.size(52.dp),color = Colors.RoseSeaShell, onClick = {}, icon = {
+                AppText(text = "≡", color= Colors.Black)
             })
         }
     }

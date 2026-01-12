@@ -9,14 +9,14 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
-import com.tawfiqdev.design_system.theme.AppColor.Black
-import com.tawfiqdev.design_system.theme.AppColor.DarkSurface
-import com.tawfiqdev.design_system.theme.AppColor.GreenRacing
-import com.tawfiqdev.design_system.theme.AppColor.GreenRacing10
-import com.tawfiqdev.design_system.theme.AppColor.GreenRacing40
-import com.tawfiqdev.design_system.theme.AppColor.GreenTeal
-import com.tawfiqdev.design_system.theme.AppColor.NearBlack
-import com.tawfiqdev.design_system.theme.AppColor.White
+import com.tawfiqdev.design_system.theme.Colors.Black
+import com.tawfiqdev.design_system.theme.Colors.DarkSurface
+import com.tawfiqdev.design_system.theme.Colors.GreenRacing
+import com.tawfiqdev.design_system.theme.Colors.GreenRacing10
+import com.tawfiqdev.design_system.theme.Colors.GreenRacing40
+import com.tawfiqdev.design_system.theme.Colors.GreenTeal
+import com.tawfiqdev.design_system.theme.Colors.NearBlack
+import com.tawfiqdev.design_system.theme.Colors.White
 
 private val LightColors = lightColorScheme(
     background = White,
@@ -42,7 +42,7 @@ private val DarkColors = darkColorScheme(
 )
 
 @Composable
-fun ParkingManagementTheme(
+fun TrackingCarTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     dynamicColor: Boolean = false, // if Android 12+
     content: @Composable () -> Unit

@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
-import com.tawfiqdev.design_system.theme.AppColor
+import com.tawfiqdev.design_system.theme.Colors
 import com.tawfiqdev.design_system.utils.Baseline4
 import com.tawfiqdev.design_system.utils.Baseline5
 
@@ -22,13 +22,13 @@ fun SectionHeader(title: String, action: String? = null) {
         AppText(
             text = title,
             modifier = Modifier.weight(1f),
-            color = AppColor.Black,
+            color = Colors.Black,
             fontSize = 20.sp
         )
         if (action != null)
             AppText(
                 text = action,
-                color = AppColor.Black
+                color = Colors.Black
             )
     }
 }

@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.tawfiqdev.design_system.theme.AppColor
+import com.tawfiqdev.design_system.theme.Colors
 import com.tawfiqdev.design_system.theme.ExtraLargeRoundedCornerShape
 import com.tawfiqdev.design_system.theme.ExtraSmallRoundedCornerShape
 import com.tawfiqdev.design_system.theme.LargeRoundedCornerShape
@@ -32,7 +32,7 @@ fun AppButton(
     text: String,
     fontSize: TextUnit = 16.sp,
     shape: RoundedCornerShape = ExtraSmallRoundedCornerShape,
-    backgroundColor: Color = AppColor.GreenRacing,
+    backgroundColor: Color = Colors.GreenRacing,
     contentColor: Color = MaterialTheme.colorScheme.onBackground,
     enabled: Boolean = true,
     onClick: () -> Unit
@@ -65,10 +65,10 @@ fun AppOutlinedButton(
     text: String,
     fontSize: TextUnit = 16.sp,
     shape: RoundedCornerShape = ExtraSmallRoundedCornerShape,
-    borderColor: Color = AppColor.GreenRacing,
+    borderColor: Color = Colors.GreenRacing,
     borderWidth: Dp = 1.dp,
-    backgroundColor: Color = AppColor.White,
-    contentColor: Color = AppColor.GreenRacing,
+    backgroundColor: Color = Color.White,
+    contentColor: Color = Colors.GreenRacing,
     enabled: Boolean = true,
     onClick: () -> Unit
 ) {

@@ -2,9 +2,14 @@ package com.tawfiqdev.design_system.theme
 
 import androidx.compose.ui.graphics.Color
 
-object AppColor {
-    val BlueNavy = Color(0xFF0C2D57)
-    val SoftBlue = Color(0xFFABD7EB)
+object Colors {
+    //Blue
+    val Matisse = Color(0xFF146296)
+    val Navy = Color(0xFF0166AE)
+    val Endeavour = Color(0xFF0164af)
+    val HalfBaked= Color(0xFF7eb1d3)
+    val SoftBlue = Color(0xFFb4e0f9)
+
     val RoseSeaShell = Color(0xFFFFF5F2)
     val Grey = Color(0xFFEFECEC)
     val GreyDark = Color(0xFF6B7280)

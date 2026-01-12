@@ -1,104 +1,80 @@
 package com.tawfiqdev.trackingcar.ui.splash
 
-import android.R
+import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.LinearOutSlowInEasing
-import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.tawfiqdev.design_system.components.Icons
+import com.tawfiqdev.design_system.theme.Colors
 import com.tawfiqdev.trackingcar.navigation.Screen
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
+import com.tawfiqdev.design_system.R
 
 @Composable
-fun SplashScreen (navController: NavHostController) {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.primary)
-    ) {
-        BackgroundSplash(
-            painter = painterResource(id = R.drawable.sym_contact_card),
-            contentDescription = "Background SlashScreen",
-            modifier = Modifier.align(Alignment.Center)
-        )
-       // navController.navigate(Screen.Login.route)
-    }
-}
-
-@Composable
-fun BackgroundSplash(
-    isReadyFlow: StateFlow<Boolean>,
-    onFinished: () -> Unit
+fun SplashScreen(
+    navController: NavHostController,
 ) {
-    val isReady by isReadyFlow.collectAsState()
+    val alpha = remember { Animatable(0f) }
+    val scale = remember { Animatable(0.85f) }
+    val rotation = remember { Animatable(0f) }
 
-    var alpha by remember { mutableFloatStateOf(0f) }
-    var scale by remember { mutableFloatStateOf(0.85f) }
-    val rotation by animateFloatAsState(
-        targetValue = if (isReady) 0f else 720f,
-        animationSpec = tween(1500, easing = LinearOutSlowInEasing)
-    )
-
-    // Fade-in +  zoom
     LaunchedEffect(Unit) {
-        val duration = 700
-        val steps = 14
-        val stepDelay = duration / steps
+        coroutineScope {
+            val fadeZoomJob = launch {
+                alpha.animateTo(
+                    targetValue = 1f,
+                    animationSpec = tween(durationMillis = 700, easing = LinearOutSlowInEasing)
+                )
+            }
 
-        repeat(steps) {
-            alpha += (1f - 0f) / steps
-            scale += (1.0f - 0.85f) / steps
-            delay(stepDelay.toLong())
-        }
-        alpha = 1f
-        scale = 1f
-    }
+            val scaleJob = launch {
+                scale.animateTo(
+                    targetValue = 1f,
+                    animationSpec = tween(durationMillis = 700, easing = LinearOutSlowInEasing)
+                )
+            }
 
-    LaunchedEffect(isReady) {
-        if (isReady) {
-            delay(3000)
-            onFinished()
+            val rotationJob = launch {
+                rotation.animateTo(
+                    targetValue = 720f,
+                    animationSpec = tween(durationMillis = 1500, easing = LinearOutSlowInEasing)
+                )
+            }
+            fadeZoomJob.join()
+            scaleJob.join()
+            rotationJob.join()
         }
+        navController.navigate(Screen.Login.route)
     }
 
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(AppColor.GreenTeal),
+            .background(Colors.White),
         contentAlignment = Alignment.Center
     ) {
-        AppIcon(
-            modifier = Modifier.graphicsLayer{
-                rotationZ = rotation
+        Icons(
+            modifier = Modifier.graphicsLayer {
+                this.alpha = alpha.value
+                scaleX = scale.value
+                scaleY = scale.value
+                rotationZ = rotation.value
             },
-            painter = AppIcons.AppIcon,
+            painter = painterResource(R.drawable.app_icon),
             size = 200.dp,
-            tint = AppColor.RoseSeaShell
+            tint = Colors.Matisse
         )
     }
-}
-
-@Preview
-@Composable
-fun SplashScreenPreview() {
-    SplashScreen(navController = NavHostController(LocalContext.current))
 }
