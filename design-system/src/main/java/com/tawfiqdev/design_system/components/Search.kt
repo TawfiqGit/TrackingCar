@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -21,7 +20,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.tawfiqdev.design_system.icone.AppIcons
+import com.tawfiqdev.design_system.objets.IconTracking
 import com.tawfiqdev.design_system.theme.Colors
 import com.tawfiqdev.design_system.theme.Colors.RoseSeaShell
 import com.tawfiqdev.design_system.theme.MediumRoundedCornerShape
@@ -32,7 +31,7 @@ fun ParkingSearch(modifier: Modifier = Modifier) {
         value = "",
         onValueChange = {},
         leadingIcon = { Icons(
-            painter = AppIcons.SearchIcon,
+            painter = IconTracking.SearchIcon,
             tint = Colors.RoseSpanish
         ) },
         placeholder = { Text("Search") },
@@ -65,11 +64,11 @@ fun LocationSearchBar(
             .height(52.dp)
             .clip(MediumRoundedCornerShape),
         placeholder = { AppText(text = "Location to select", color = Colors.Black)},
-        leadingIcon = { Icons(painter = AppIcons.LocationSelectedIcon, tint = Colors.GreenRacing) },
+        leadingIcon = { Icons(painter = IconTracking.LocationSelectedIcon, tint = Colors.GreenRacing) },
         trailingIcon = {
             if (value.isNotEmpty()) {
                 IconButton(onClick = onClear) {
-                    Icon(Icons.Filled.Clear, contentDescription = "Clear")
+                    //Icon(Icon.Filled.Clear, contentDescription = "Clear")
                 }
             }
         },

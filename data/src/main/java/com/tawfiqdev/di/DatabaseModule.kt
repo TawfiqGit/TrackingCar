@@ -26,7 +26,7 @@ class DatabaseModule {
             .databaseBuilder(
                 appContext,
                 TrackingCarDatabase::class.java,
-                "parking_mgmt_db"
+                "trackingCarDatabase"
             )
             .fallbackToDestructiveMigration()
             .build()
@@ -43,13 +43,4 @@ class DatabaseModule {
 
     @Provides
     fun provideUserDao(db: TrackingCarDatabase) = db.userDao()
-
-    @Provides
-    fun provideReservationDao(db: TrackingCarDatabase) = db.reservationDao()
-
-    @Provides
-    fun provideParkingDao(db: TrackingCarDatabase) = db.parkingDao()
-
-    @Provides
-    fun provideLocationDao(db: TrackingCarDatabase) = db.locationDao()
 }

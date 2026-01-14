@@ -13,7 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.tawfiqdev.design_system.icone.AppIcons
+import com.tawfiqdev.design_system.objets.IconTracking
 import com.tawfiqdev.design_system.theme.Colors
 import com.tawfiqdev.design_system.utils.Baseline3
 import com.tawfiqdev.design_system.utils.Baseline4
@@ -36,7 +36,7 @@ fun SearchResultRow(title: String, subtitle: String, onClick: () -> Unit) {
             .padding(vertical = Baseline4)
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Icons(painter = AppIcons.LocationSelectedIcon, tint = Colors.GreenRacing)
+            Icons(painter = IconTracking.LocationSelectedIcon, tint = Colors.GreenRacing)
 
             Spacer(Modifier.width(Baseline3))
 

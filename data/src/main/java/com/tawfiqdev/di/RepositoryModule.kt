@@ -1,8 +1,5 @@
 package com.tawfiqdev.di
 
-import com.tawfiqdev.repository.LocationRepositoryImpl
-import com.tawfiqdev.repository.ParkingRepositoryImpl
-import com.tawfiqdev.repository.ReservationRepositoryImpl
 import com.tawfiqdev.repository.UserRepository
 import com.tawfiqdev.repository.UserRepositoryImpl
 import com.tawfiqdev.repository.VehicleModelRepository
@@ -25,18 +22,6 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindVehicleModelRepository(impl: VehicleModelRepositoryImpl): VehicleModelRepository
-
-    @Binds
-    @Singleton
-    abstract fun bindParkingRepository(impl: ParkingRepositoryImpl): ParkingRepository
-
-    @Binds
-    @Singleton
-    abstract fun bindLocationRepository(impl: LocationRepositoryImpl): LocationRepository
-
-    @Binds
-    @Singleton()
-    abstract fun bindReservationRepository(impl: ReservationRepositoryImpl): ReservationRepository
 
     @Binds
     @Singleton

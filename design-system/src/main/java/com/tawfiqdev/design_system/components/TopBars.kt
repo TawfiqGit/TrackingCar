@@ -1,3 +1,5 @@
+@file:JvmName("TopBarKt")
+
 package com.tawfiqdev.design_system.components
 
 import androidx.compose.foundation.background
@@ -16,8 +18,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.tawfiqdev.design_system.icone.AppIcons.LocationIcon
-import com.tawfiqdev.design_system.icone.AppIcons.NotificationIcon
+import com.tawfiqdev.design_system.objets.IconTracking.LocationIcon
+import com.tawfiqdev.design_system.objets.IconTracking.NotificationIcon
 import com.tawfiqdev.design_system.theme.Colors
 import com.tawfiqdev.design_system.utils.Baseline1
 import com.tawfiqdev.design_system.utils.Baseline2

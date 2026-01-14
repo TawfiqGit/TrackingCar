@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
-import com.tawfiqdev.design_system.icone.AppIcons
+import com.tawfiqdev.design_system.objets.IconTracking
 import com.tawfiqdev.design_system.theme.Colors
 import com.tawfiqdev.design_system.theme.NormalRoundedCornerShape
 import com.tawfiqdev.design_system.utils.Baseline0
@@ -35,7 +35,7 @@ fun RatingBadge(rating: Double, modifier: Modifier = Modifier) {
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icons(
-            painter = AppIcons.StartIcon,
+            painter = IconTracking.StartIcon,
             tint = Colors.YellowCyber
         )
         AppText(

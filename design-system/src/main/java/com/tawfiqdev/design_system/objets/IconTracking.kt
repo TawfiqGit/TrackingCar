@@ -1,4 +1,4 @@
-package com.tawfiqdev.design_system.icone
+package com.tawfiqdev.design_system.objets
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
@@ -16,7 +16,7 @@ import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.res.painterResource
 import com.tawfiqdev.design_system.R
 
-object AppIcons {
+object IconTracking {
 
     val AppIcon: Painter
         @Composable
