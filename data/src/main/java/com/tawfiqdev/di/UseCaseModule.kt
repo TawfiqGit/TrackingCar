@@ -1,8 +1,5 @@
 package com.tawfiqdev.di
 
-import com.tawfiqdev.repository.LocationRepository
-import com.tawfiqdev.repository.ParkingRepository
-import com.tawfiqdev.repository.ReservationRepository
 import com.tawfiqdev.repository.UserRepository
 import com.tawfiqdev.repository.VehicleModelRepository
 import com.tawfiqdev.repository.VehicleRepository

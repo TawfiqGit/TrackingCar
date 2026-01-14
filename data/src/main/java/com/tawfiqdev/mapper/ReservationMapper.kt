@@ -1,10 +1,5 @@
 package com.tawfiqdev.mapper
 
-import com.tawfiqdev.database.entity.ReservationEntity
-import com.tawfiqdev.database.relations.ReservationFull
-import com.tawfiqdev.model.Reservation
-import com.tawfiqdev.model.ReservationDetails
-
 fun ReservationFull.toDomain(): ReservationDetails =
     ReservationDetails(
         reservation = reservation.toDomain(),

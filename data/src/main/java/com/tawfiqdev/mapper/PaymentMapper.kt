@@ -1,8 +1,5 @@
 package com.tawfiqdev.mapper
 
-import com.tawfiqdev.database.entity.PaymentEntity
-import com.tawfiqdev.model.Payment
-
 fun PaymentEntity.toDomain() = Payment(
     id = id,
     providerRef = providerRef,

@@ -1,10 +1,7 @@
 package com.tawfiqdev.di
 
-import com.tawfiqdev.repository.LocationRepository
 import com.tawfiqdev.repository.LocationRepositoryImpl
-import com.tawfiqdev.repository.ParkingRepository
 import com.tawfiqdev.repository.ParkingRepositoryImpl
-import com.tawfiqdev.repository.ReservationRepository
 import com.tawfiqdev.repository.ReservationRepositoryImpl
 import com.tawfiqdev.repository.UserRepository
 import com.tawfiqdev.repository.UserRepositoryImpl

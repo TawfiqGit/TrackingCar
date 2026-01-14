@@ -1,8 +1,5 @@
 package com.tawfiqdev.mapper
 
-import com.tawfiqdev.database.entity.EntryExitLogEntity
-import com.tawfiqdev.model.EntryExitLog
-
 fun EntryExitLogEntity.toDomain() = EntryExitLog(
     id = id,
     reservationId = reservationId,

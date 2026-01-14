@@ -1,9 +1,6 @@
 package com.tawfiqdev.repository
 
 import com.tawfiqdev.mapper.toDomain
-import com.tawfiqdev.model.Parking
-import com.tawfiqdev.database.dao.ParkingDao
-import com.tawfiqdev.database.entity.ParkingEntity
 import com.tawfiqdev.utils.ResultOutput
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map

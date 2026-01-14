@@ -2,7 +2,7 @@ package com.tawfiqdev.di
 
 import android.content.Context
 import androidx.room.Room
-import com.tawfiqdev.database.ParkingMgmtDatabase
+import com.tawfiqdev.database.TrackingCarDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,11 +21,11 @@ class DatabaseModule {
 
     @Provides //Créez l'objet vous-même
     @Singleton
-    fun provideDatabase(@ApplicationContext appContext: Context) : ParkingMgmtDatabase {
+    fun provideDatabase(@ApplicationContext appContext: Context) : TrackingCarDatabase {
         return Room
             .databaseBuilder(
                 appContext,
-                ParkingMgmtDatabase::class.java,
+                TrackingCarDatabase::class.java,
                 "parking_mgmt_db"
             )
             .fallbackToDestructiveMigration()
@@ -36,20 +36,20 @@ class DatabaseModule {
     fun provideIoDispatcher(): CoroutineDispatcher = Dispatchers.IO
 
     @Provides
-    fun provideCarDao(db: ParkingMgmtDatabase) = db.vehicleDao()
+    fun provideCarDao(db: TrackingCarDatabase) = db.vehicleDao()
 
     @Provides
-    fun provideVehicleModelDao(db: ParkingMgmtDatabase) = db.vehicleModelDao()
+    fun provideVehicleModelDao(db: TrackingCarDatabase) = db.vehicleModelDao()
 
     @Provides
-    fun provideUserDao(db: ParkingMgmtDatabase) = db.userDao()
+    fun provideUserDao(db: TrackingCarDatabase) = db.userDao()
 
     @Provides
-    fun provideReservationDao(db: ParkingMgmtDatabase) = db.reservationDao()
+    fun provideReservationDao(db: TrackingCarDatabase) = db.reservationDao()
 
     @Provides
-    fun provideParkingDao(db: ParkingMgmtDatabase) = db.parkingDao()
+    fun provideParkingDao(db: TrackingCarDatabase) = db.parkingDao()
 
     @Provides
-    fun provideLocationDao(db: ParkingMgmtDatabase) = db.locationDao()
+    fun provideLocationDao(db: TrackingCarDatabase) = db.locationDao()
 }

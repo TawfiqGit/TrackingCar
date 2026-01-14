@@ -2,10 +2,6 @@ package com.tawfiqdev.repository
 
 import android.util.Log
 import com.tawfiqdev.mapper.toDomain
-import com.tawfiqdev.model.LocationSelection
-import com.tawfiqdev.database.dao.LocationDao
-import com.tawfiqdev.database.entity.LocationEntity
-import com.tawfiqdev.database.entity.RecentLocationEntity
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
