@@ -1,12 +1,12 @@
 package com.tawfiqdev.design_system.objets
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.rounded.KeyboardArrowRight
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.outlined.Delete
-import androidx.compose.material.icons.outlined.KeyboardArrowRight
 import androidx.compose.material.icons.outlined.LocationOn
 import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material.icons.outlined.Person
@@ -36,7 +36,7 @@ object IconTracking {
 
     val ArrowRight: Painter
         @Composable
-        get() = rememberVectorPainter(Icons.Outlined.KeyboardArrowRight)
+        get() = rememberVectorPainter(Icons.AutoMirrored.Rounded.KeyboardArrowRight)
 
     val EventIcon: Painter
         @Composable

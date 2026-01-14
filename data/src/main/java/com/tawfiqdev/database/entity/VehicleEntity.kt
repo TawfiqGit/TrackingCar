@@ -31,5 +31,5 @@ data class VehicleEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     @ColumnInfo(name = "user_id") val userId: Long,
     @ColumnInfo(name = "registration_plate") val registrationPlate: String,
-    @ColumnInfo(name = "vehicle_model") val vehicleModel: Long
+    @ColumnInfo(name = "vehicle_model", index = true) val vehicleModel: Long
 )
