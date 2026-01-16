@@ -10,6 +10,11 @@ object Colors {
     val HalfBaked= Color(0xFF7eb1d3)
     val SoftBlue = Color(0xFFb4e0f9)
 
+    val AppBlue = Color(0xFF2D61A0)
+    val AppGreen = Color(0xFF86B96F)
+    val AppYellow = Color(0xFFE9B84A)
+    val AppRed = Color(0xFFCC3E55)
+
     val RoseSeaShell = Color(0xFFFFF5F2)
     val Grey = Color(0xFFEFECEC)
     val GreyDark = Color(0xFF6B7280)

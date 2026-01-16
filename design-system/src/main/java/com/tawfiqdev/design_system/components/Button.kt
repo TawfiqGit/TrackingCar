@@ -2,23 +2,30 @@ package com.tawfiqdev.design_system.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.tawfiqdev.design_system.R
 import com.tawfiqdev.design_system.theme.Colors
 import com.tawfiqdev.design_system.theme.ExtraLargeRoundedCornerShape
 import com.tawfiqdev.design_system.theme.ExtraSmallRoundedCornerShape
@@ -60,15 +67,16 @@ fun AppButton(
 }
 
 @Composable
-fun AppOutlinedButton(
+fun ActionOutlinedButton(
     modifier: Modifier = Modifier,
     text: String,
-    fontSize: TextUnit = 16.sp,
+    fontSize: TextUnit = 20.sp,
+    iconId: Int ,
     shape: RoundedCornerShape = ExtraSmallRoundedCornerShape,
-    borderColor: Color = Colors.GreenRacing,
+    borderColor: Color = Colors.Black,
+    contentColor: Color = Colors.Black,
     borderWidth: Dp = 1.dp,
     backgroundColor: Color = Color.White,
-    contentColor: Color = Colors.GreenRacing,
     enabled: Boolean = true,
     onClick: () -> Unit
 ) {
@@ -86,6 +94,13 @@ fun AppOutlinedButton(
         ),
         contentPadding = ButtonDefaults.ContentPadding
     ) {
+        Icon(
+            imageVector  = ImageVector.vectorResource(id = iconId),
+            contentDescription = null,
+            modifier = Modifier.size(26.dp)
+        )
+        Spacer(modifier = Modifier.width(10.dp))
+
         AppText(
             text = text,
             color = contentColor,
@@ -123,7 +138,7 @@ fun ContinueButtonPreview() {
 @Preview
 @Composable
 fun AppOutlineButtonPreview() {
-    AppOutlinedButton(text = "Hello World", shape = ExtraSmallRoundedCornerShape) {}
+    ActionOutlinedButton(text = "Hello World", iconId = R.drawable.outline_logout, shape = ExtraSmallRoundedCornerShape) {}
 }
 
 @Preview
