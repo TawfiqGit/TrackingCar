@@ -56,7 +56,7 @@ fun SplashScreen(
             scaleJob.join()
             rotationJob.join()
         }
-        navController.navigate(Screen.Dashboard.route)
+        navController.navigate(Screen.Home.route)
     }
 
     Box(

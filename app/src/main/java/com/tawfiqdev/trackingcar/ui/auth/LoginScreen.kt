@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavHostController
 
 @Composable
-fun LoginScreen (navController: NavHostController){
+fun LoginScreen (){
     Box(
         modifier = Modifier
             .fillMaxSize()
