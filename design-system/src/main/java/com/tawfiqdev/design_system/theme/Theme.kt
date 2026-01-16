@@ -9,14 +9,15 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
-import com.tawfiqdev.design_system.theme.Colors.Black
-import com.tawfiqdev.design_system.theme.Colors.DarkSurface
-import com.tawfiqdev.design_system.theme.Colors.GreenRacing
-import com.tawfiqdev.design_system.theme.Colors.GreenRacing10
-import com.tawfiqdev.design_system.theme.Colors.GreenRacing40
-import com.tawfiqdev.design_system.theme.Colors.GreenTeal
-import com.tawfiqdev.design_system.theme.Colors.NearBlack
-import com.tawfiqdev.design_system.theme.Colors.White
+import com.tawfiqdev.design_system.objets.AppColor.Black
+import com.tawfiqdev.design_system.objets.AppColor.DarkSurface
+import com.tawfiqdev.design_system.objets.AppColor.GreenRacing
+import com.tawfiqdev.design_system.objets.AppColor.GreenRacing10
+import com.tawfiqdev.design_system.objets.AppColor.GreenRacing40
+import com.tawfiqdev.design_system.objets.AppColor.GreenTeal
+import com.tawfiqdev.design_system.objets.AppColor.NearBlack
+import com.tawfiqdev.design_system.objets.AppColor.White
+
 
 private val LightColors = lightColorScheme(
     background = White,

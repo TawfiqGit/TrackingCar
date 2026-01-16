@@ -15,12 +15,12 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.tawfiqdev.design_system.components.Icons
-import com.tawfiqdev.design_system.theme.Colors
 import com.tawfiqdev.trackingcar.navigation.Screen
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import com.tawfiqdev.design_system.R
+import com.tawfiqdev.design_system.components.AppIcon
+import com.tawfiqdev.design_system.objets.AppColor
 
 @Composable
 fun SplashScreen(
@@ -62,10 +62,10 @@ fun SplashScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Colors.White),
+            .background(AppColor.White),
         contentAlignment = Alignment.Center
     ) {
-        Icons(
+        AppIcon(
             modifier = Modifier.graphicsLayer {
                 this.alpha = alpha.value
                 scaleX = scale.value
@@ -74,7 +74,7 @@ fun SplashScreen(
             },
             painter = painterResource(R.drawable.app_icon),
             size = 200.dp,
-            tint = Colors.Matisse
+            tint = AppColor.Matisse
         )
     }
 }

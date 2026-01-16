@@ -12,35 +12,15 @@ class UserRepositoryImpl @Inject constructor(
     private val userDao: UserDao
 ) : UserRepository {
 
-    override suspend fun insert(user: User): ResultOutput<Unit, ErrorState> =
+    override suspend fun login(identifier: String): String {
         try {
-            userDao.insert(user.toEntity())
-            ResultOutput.Success(Unit)
+            val entity = userDao.getById(identifier)
         } catch (e: Exception) {
             ResultOutput.Failure(ErrorState.Database(e))
         }
+    }
 
-    override suspend fun update(user: User): ResultOutput<Unit, ErrorState> =
-        try {
-            userDao.update(user.toEntity())
-            ResultOutput.Success(Unit)
-        } catch (e: Exception) {
-            ResultOutput.Failure(ErrorState.Database(e))
-        }
-
-    override suspend fun delete(user: User): ResultOutput<Unit, ErrorState> =
-        try {
-            userDao.delete(user.toEntity())
-            ResultOutput.Success(Unit)
-        } catch (e: Exception) {
-            ResultOutput.Failure(ErrorState.Database(e))
-        }
-
-    override suspend fun getUserById(id: Long): ResultOutput<User?, ErrorState> =
-        try {
-            val entity = userDao.getById(id)
-            ResultOutput.Success(entity?.toDomain())
-        } catch (e: Exception) {
-            ResultOutput.Failure(ErrorState.Database(e))
-        }
+    override suspend fun password(password: String): ResultOutput<User?, ErrorState> {
+        TODO("Not yet implemented")
+    }
 }

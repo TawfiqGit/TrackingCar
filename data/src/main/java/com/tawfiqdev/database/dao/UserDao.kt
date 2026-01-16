@@ -1,28 +1,17 @@
 package com.tawfiqdev.database.dao
 
 import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import androidx.room.Transaction
-import androidx.room.Update
-import com.tawfiqdev.database.entity.UserEntity
-import com.tawfiqdev.database.relations.UserWithVehicles
+import com.tawfiqdev.model.Login
+import com.tawfiqdev.model.Password
 
 @Dao
 interface UserDao {
 
-    @Insert(onConflict = OnConflictStrategy.ABORT)
-    suspend fun insert(user: UserEntity): Long
+    @Query("SELECT * FROM login")
+    suspend fun getLogin(identifier : String): Login
 
-    @Update suspend fun update(user: UserEntity)
-    @Delete suspend fun delete(user: UserEntity)
 
-    @Query("SELECT * FROM users WHERE id = :id")
-    suspend fun getById(id: Long): UserEntity?
-
-    @Transaction
-    @Query("SELECT * FROM users WHERE id = :id")
-    suspend fun getWithVehicles(id: Long): UserWithVehicles?
+    @Query("SELECT * FROM password")
+    suspend fun getPassword(password: String): Password
 }

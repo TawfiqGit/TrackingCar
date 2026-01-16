@@ -64,6 +64,7 @@ dependencies {
     implementation (libs.coil.compose.v270)
     implementation (libs.androidx.datastore.preferences)
     implementation (libs.gson)
+    implementation(libs.androidx.navigation.safe.args.generator)
     //----------------------------------------------------------------------------
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

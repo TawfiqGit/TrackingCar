@@ -1,10 +1,10 @@
 package com.tawfiqdev.trackingcar.navigation
 
+import LoginScreen
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.tawfiqdev.trackingcar.ui.dashboard.LoginScreen
 import com.tawfiqdev.trackingcar.ui.splash.SplashScreen
 
 @Composable

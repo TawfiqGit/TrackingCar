@@ -1,18 +1,32 @@
 package com.tawfiqdev.mapper
 
-import com.tawfiqdev.database.entity.UserEntity
-import com.tawfiqdev.model.User
+import com.tawfiqdev.database.entity.DataLoginEntity
+import com.tawfiqdev.database.entity.DataPasswordEntity
+import com.tawfiqdev.database.entity.LoginEntity
+import com.tawfiqdev.database.entity.PasswordEntity
+import com.tawfiqdev.model.DataLogin
+import com.tawfiqdev.model.DataPassword
+import com.tawfiqdev.model.Login
+import com.tawfiqdev.model.Password
 
-fun UserEntity.toDomain(): User = User(
-    id = id,
-    name = name,
-    email = email,
-    phone = phone
+fun LoginEntity.toDomain(): Login = Login(
+    api_vesrion = api_vesrion,
+    data = data.toDomain(),
 )
 
-fun User.toEntity(): UserEntity = UserEntity(
+fun DataLoginEntity.toDomain(): DataLogin = DataLogin(
     id = id,
-    name = name,
-    email = email,
-    phone = phone
+    token = token,
+    userName = userName,
+    givenName = givenName,
+)
+
+fun PasswordEntity.toDomain(): Password = Password(
+    api_vesrion = api_vesrion,
+    data = data.toDomain(),
+)
+
+fun DataPasswordEntity.toDomain(): DataPassword = DataPassword(
+    token = token,
+    jti = jti
 )

@@ -36,11 +36,5 @@ class DatabaseModule {
     fun provideIoDispatcher(): CoroutineDispatcher = Dispatchers.IO
 
     @Provides
-    fun provideCarDao(db: TrackingCarDatabase) = db.vehicleDao()
-
-    @Provides
-    fun provideVehicleModelDao(db: TrackingCarDatabase) = db.vehicleModelDao()
-
-    @Provides
     fun provideUserDao(db: TrackingCarDatabase) = db.userDao()
 }

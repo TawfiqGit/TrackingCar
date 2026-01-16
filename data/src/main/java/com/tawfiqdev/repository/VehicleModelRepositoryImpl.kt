@@ -1,9 +1,6 @@
 package com.tawfiqdev.repository
 
-import com.tawfiqdev.database.dao.VehicleModelDao
-import com.tawfiqdev.database.entity.VehicleModelEntity
 import com.tawfiqdev.mapper.toDomain
-import com.tawfiqdev.model.VehicleModel
 import com.tawfiqdev.utils.ErrorState
 import com.tawfiqdev.utils.ResultOutput
 import kotlinx.coroutines.flow.Flow
