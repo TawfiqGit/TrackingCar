@@ -15,14 +15,11 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.createGraph
 import com.tawfiqdev.design_system.theme.TrackingCarTheme
 import com.tawfiqdev.trackingcar.navigation.BottomNavigationBar
-import com.tawfiqdev.trackingcar.navigation.NavHostScreen
 import com.tawfiqdev.trackingcar.navigation.Screen
 import com.tawfiqdev.trackingcar.ui.CartScreen
 import com.tawfiqdev.trackingcar.ui.ProfileScreen
 import com.tawfiqdev.trackingcar.ui.ReservationScreen
-import com.tawfiqdev.trackingcar.ui.auth.LoginScreen
-import com.tawfiqdev.trackingcar.ui.dashboard.DashboardScreen
-import com.tawfiqdev.trackingcar.ui.splash.SplashScreen
+import com.tawfiqdev.trackingcar.ui.DashboardScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -48,26 +45,27 @@ fun MainScreen() {
             BottomNavigationBar(navController)
         }
     ) { innerPadding ->
+        val userNameProfile = "Florent Delestaing"
 
         val graph =
             navController.createGraph(startDestination = Screen.Home.route) {
-                composable(route = Screen.Home.route) {
+                composable(route = Screen.Home.route) {it ->
                     DashboardScreen(
-                        userName = "Florent Delestaing",
+                        userName = userNameProfile,
                         onBorrowVehicle = {  },
                         onReturnVehicle = { },
                         onHistory = { },
                         onQuit = { navController.popBackStack() }
                     )
                 }
-                composable(route = Screen.Cart.route) {
-                    CartScreen()
+                composable(route = Screen.Cart.route) {it ->
+                    CartScreen(userName = userNameProfile)
                 }
-                composable(route = Screen.Reservation.route) {
-                    ReservationScreen()
+                composable(route = Screen.Reservation.route) {it ->
+                    ReservationScreen(userName = userNameProfile)
                 }
-                composable(route = Screen.Profile.route) {
-                    ProfileScreen()
+                composable(route = Screen.Profile.route) { it ->
+                    ProfileScreen(userName = userNameProfile)
                 }
             }
         NavHost(
