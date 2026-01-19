@@ -1,4 +1,4 @@
-package com.tawfiqdev.trackingcar.ui.splash
+package com.tawfiqdev.trackingcar.ui
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.LinearOutSlowInEasing
@@ -56,7 +56,7 @@ fun SplashScreen(
             scaleJob.join()
             rotationJob.join()
         }
-        navController.navigate(Screen.Login.route)
+        navController.navigate(Screen.Home.route)
     }
 
     Box(

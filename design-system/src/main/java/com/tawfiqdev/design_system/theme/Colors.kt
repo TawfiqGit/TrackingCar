@@ -4,11 +4,15 @@ import androidx.compose.ui.graphics.Color
 
 object Colors {
     //Blue
+    val AppBlue = Color(0xFF2D61A0)
     val Matisse = Color(0xFF146296)
     val Navy = Color(0xFF0166AE)
     val Endeavour = Color(0xFF0164af)
     val HalfBaked= Color(0xFF7eb1d3)
     val SoftBlue = Color(0xFFb4e0f9)
+    val AppGreen = Color(0xFF86B96F)
+    val AppYellow = Color(0xFFE9B84A)
+    val AppRed = Color(0xFFCC3E55)
 
     val RoseSeaShell = Color(0xFFFFF5F2)
     val Grey = Color(0xFFEFECEC)

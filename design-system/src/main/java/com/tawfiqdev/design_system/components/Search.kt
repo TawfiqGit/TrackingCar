@@ -5,8 +5,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.filled.Clear
-import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -22,23 +20,24 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.tawfiqdev.design_system.objets.IconTracking
 import com.tawfiqdev.design_system.theme.Colors
-import com.tawfiqdev.design_system.theme.Colors.RoseSeaShell
+import com.tawfiqdev.design_system.theme.Colors.Matisse
 import com.tawfiqdev.design_system.theme.MediumRoundedCornerShape
 
 @Composable
-fun ParkingSearch(modifier: Modifier = Modifier) {
+fun SearchCars(modifier: Modifier = Modifier) {
     TextField(
         value = "",
         onValueChange = {},
-        leadingIcon = { Icons(
-            painter = IconTracking.SearchIcon,
-            tint = Colors.RoseSpanish
-        ) },
+        leadingIcon = {
+            Icons(
+                painter = IconTracking.SearchIcon,
+                tint = Colors.AppBlue
+            ) },
         placeholder = { Text("Search") },
         singleLine = true,
         modifier = modifier
             .clip(MediumRoundedCornerShape)
-            .background(RoseSeaShell),
+            .background(Matisse),
         colors = TextFieldDefaults.colors(
             focusedContainerColor = MaterialTheme.colorScheme.onPrimary,
             unfocusedContainerColor = MaterialTheme.colorScheme.onPrimary,
@@ -92,7 +91,7 @@ fun LocationSearchBar(
 @Preview
 @Composable
 fun SearchParkingPreview() {
-    ParkingSearch()
+    SearchCars()
 }
 
 

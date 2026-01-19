@@ -1,4 +1,4 @@
-package com.tawfiqdev.trackingcar.ui.dashboard
+package com.tawfiqdev.trackingcar.ui.auth
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavHostController
 
 @Composable
-fun LoginScreen (navController: NavHostController){
+fun LoginScreen (){
     Box(
         modifier = Modifier
             .fillMaxSize()
