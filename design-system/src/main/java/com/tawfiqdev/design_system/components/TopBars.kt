@@ -11,25 +11,17 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.tawfiqdev.design_system.objets.IconTracking.LocationIcon
-import com.tawfiqdev.design_system.objets.IconTracking.NotificationIcon
 import com.tawfiqdev.design_system.theme.Colors
-import com.tawfiqdev.design_system.utils.Baseline1
-import com.tawfiqdev.design_system.utils.Baseline2
 import com.tawfiqdev.design_system.utils.Baseline5
 import com.tawfiqdev.design_system.utils.Baseline6
 
 @Composable
 fun LocationHeader(
-    location: String,
-    onNotificationsClick: () -> Unit = {} ,
+    userName: String,
     onSelectedLocationClick: () -> Unit = {},
 ) {
     Column(
@@ -38,32 +30,10 @@ fun LocationHeader(
             .background(Colors.GreenRacing)
             .padding(horizontal = Baseline5, vertical = Baseline6)
     ) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Row(
-                modifier = Modifier.weight(1f),
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Icons(painter = LocationIcon, tint = Colors.White)
-
-                Spacer(Modifier.width(Baseline2))
-
-                AppText(text = location, color = Colors.White, onClick = onSelectedLocationClick)
-
-                Spacer(Modifier.width(Baseline1))
-
-                Text("▾", color = Colors.White)
-            }
-            SquareActionButton(modifier = Modifier.size(48.dp), onClick = onNotificationsClick ,color = Colors.GreenTeal, icon = {
-                Icons(painter = NotificationIcon , tint = Colors.White)
-            })
-        }
         Spacer(Modifier.height(Baseline5))
 
         Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            ParkingSearch(
+            SearchCars(
                 modifier = Modifier.weight(1f)
             )
             SquareActionButton(modifier = Modifier.size(52.dp),color = Colors.RoseSeaShell, onClick = {}, icon = {
@@ -76,5 +46,5 @@ fun LocationHeader(
 @Preview
 @Composable
 fun AppTopBarPreview() {
-    LocationHeader(location = "India")
+    LocationHeader(userName = "India")
 }

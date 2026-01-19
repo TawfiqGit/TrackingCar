@@ -1,15 +1,16 @@
 package com.tawfiqdev.design_system.components
 
-import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AccountCircle
 import androidx.compose.material3.Icon
@@ -18,61 +19,72 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.tawfiqdev.design_system.theme.Colors
 import com.tawfiqdev.design_system.theme.Colors.AppBlue
+import com.tawfiqdev.design_system.utils.Baseline5_1
 
 @Composable
 fun Header(
     userName: String,
     modifier: Modifier = Modifier
 ) {
-    Surface(
-        color = AppBlue,
-        tonalElevation = 0.dp,
-        shadowElevation = 0.dp,
-        modifier = modifier
+    Column(
+        modifier = Modifier
             .fillMaxWidth()
-            .height(162.dp)
+            .background(AppBlue)
+            .padding(horizontal = Baseline5_1, vertical = Baseline5_1)
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(horizontal = 22.dp),
-            verticalAlignment = Alignment.CenterVertically
+        Surface(
+            color = AppBlue,
+            tonalElevation = 0.dp,
+            shadowElevation = 0.dp,
+            modifier = modifier
+                .fillMaxWidth()
+                .height(54.dp)
         ) {
-            Box(
-                modifier = Modifier
-                    .size(78.dp)
-                    .clip(CircleShape),
-                contentAlignment = Alignment.Center
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
             ) {
-                Surface(
-                    shape = CircleShape,
-                    color = Color.Transparent,
-                    border = BorderStroke(2.dp, Color.White),
-                    modifier = Modifier.fillMaxSize()
-                ) {}
+                Box(modifier = Modifier.size(96.dp)) {
+                    Icon(
+                        imageVector = Icons.Outlined.AccountCircle,
+                        contentDescription = "Profil",
+                        tint = Color.White,
+                        modifier = Modifier.fillMaxSize()
+                    )
+                }
 
-                Icon(
-                    imageVector = Icons.Outlined.AccountCircle,
-                    contentDescription = "Profil",
-                    tint = Color.White,
-                    modifier = Modifier.size(70.dp)
+                Text(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .weight(1f)
+                        .wrapContentHeight(align = Alignment.CenterVertically),
+                    text = userName,
+                    color = Color.White,
+                    fontSize = 24.sp,
+                    overflow = TextOverflow.Ellipsis
+                )
+
+                SquareActionButton(
+                    modifier = Modifier.size(52.dp),
+                    color = Colors.SoftBlue,
+                    onClick = {},
+                    icon = {
+                        AppText(text = "≡", color= Colors.Black)
+                    }
                 )
             }
-            Spacer(modifier = Modifier.size(16.dp))
-
-            Text(
-                text = userName,
-                color = Color.White,
-                fontSize = 24.sp,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis
-            )
         }
     }
+}
+
+@Preview
+@Composable
+fun TopBarPreview() {
+    Header(userName = "India")
 }
