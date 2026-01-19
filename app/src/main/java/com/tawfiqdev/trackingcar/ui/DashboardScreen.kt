@@ -18,9 +18,6 @@ import com.tawfiqdev.design_system.components.ActionOutlinedButton
 import com.tawfiqdev.design_system.components.Header
 import com.tawfiqdev.design_system.theme.Colors
 import com.tawfiqdev.design_system.theme.Colors.AppBlue
-import com.tawfiqdev.design_system.theme.Colors.AppGreen
-import com.tawfiqdev.design_system.theme.Colors.AppRed
-import com.tawfiqdev.design_system.theme.Colors.AppYellow
 
 @Composable
 fun DashboardScreen(

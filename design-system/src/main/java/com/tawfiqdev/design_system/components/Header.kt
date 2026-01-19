@@ -50,7 +50,7 @@ fun Header(
             Row(
                 horizontalArrangement = Arrangement.spacedBy(10.dp)
             ) {
-                Box(modifier = Modifier.size(96.dp)) {
+                Box(modifier = Modifier.size(56.dp)) {
                     Icon(
                         imageVector = Icons.Outlined.AccountCircle,
                         contentDescription = "Profil",
@@ -71,7 +71,7 @@ fun Header(
                 )
 
                 SquareActionButton(
-                    modifier = Modifier.size(52.dp),
+                    modifier = Modifier.size(52.dp).padding(2.dp),
                     color = Colors.SoftBlue,
                     onClick = {},
                     icon = {
