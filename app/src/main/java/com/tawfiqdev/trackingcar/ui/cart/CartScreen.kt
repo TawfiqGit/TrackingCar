@@ -1,4 +1,4 @@
-package com.tawfiqdev.design_system.components
+package com.tawfiqdev.trackingcar.ui.cart
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -21,12 +21,28 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.tawfiqdev.design_system.components.AppText
+import com.tawfiqdev.design_system.components.Header
+import com.tawfiqdev.design_system.components.SquareActionButton
 import com.tawfiqdev.design_system.theme.Colors
 import com.tawfiqdev.design_system.theme.Colors.AppBlue
 import com.tawfiqdev.design_system.utils.Baseline5_1
+
+@Composable
+fun CartScreen(
+    modifier: Modifier = Modifier,
+    userName: String,
+){
+    Box (
+        modifier = Modifier.fillMaxSize().background(Colors.White),
+        contentAlignment = Alignment.TopCenter
+    ){
+        Header(userName = userName)
+
+    }
+}
 
 @Composable
 fun Header(
@@ -72,7 +88,7 @@ fun Header(
 
                 SquareActionButton(
                     modifier = Modifier.size(52.dp).padding(2.dp),
-                    color = Colors.White,
+                    color = Colors.SoftBlue,
                     onClick = {},
                     icon = {
                         AppText(text = "≡", color= Colors.Black)
@@ -81,10 +97,4 @@ fun Header(
             }
         }
     }
-}
-
-@Preview
-@Composable
-fun TopBarPreview() {
-    Header(userName = "India")
 }

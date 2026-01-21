@@ -16,7 +16,7 @@ import androidx.navigation.createGraph
 import com.tawfiqdev.design_system.theme.TrackingCarTheme
 import com.tawfiqdev.trackingcar.navigation.BottomNavigationBar
 import com.tawfiqdev.trackingcar.navigation.Screen
-import com.tawfiqdev.trackingcar.ui.CartScreen
+import com.tawfiqdev.trackingcar.ui.cart.CartScreen
 import com.tawfiqdev.trackingcar.ui.ProfileScreen
 import com.tawfiqdev.trackingcar.ui.ReservationScreen
 import com.tawfiqdev.trackingcar.ui.DashboardScreen

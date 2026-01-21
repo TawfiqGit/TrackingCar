@@ -4,7 +4,6 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-
 @Entity(
     tableName = "rentals",
     foreignKeys = [
@@ -22,7 +21,7 @@ data class RentalEntity(
     val checkOutDate: Long? = null,
     val startMileage: Int,
     val endMileage: Int? = null,
-    val status: RentalStatus
+    val status: RentalStatus = RentalStatus.ACTIVE,
 )
 
 enum class RentalStatus {

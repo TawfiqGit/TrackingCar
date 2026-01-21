@@ -32,15 +32,17 @@ class DatabaseModule {
             .build()
     }
 
-    @Provides
-    fun provideIoDispatcher(): CoroutineDispatcher = Dispatchers.IO
+    @Provides fun provideIoDispatcher(): CoroutineDispatcher = Dispatchers.IO
 
-    @Provides
-    fun provideCarDao(db: TrackingCarDatabase) = db.vehicleDao()
+    @Provides fun provideUserDao(db: TrackingCarDatabase) = db.userDao()
 
-    @Provides
-    fun provideVehicleModelDao(db: TrackingCarDatabase) = db.vehicleModelDao()
+    @Provides fun provideReservationDao(db: TrackingCarDatabase) = db.reservationDao()
 
-    @Provides
-    fun provideUserDao(db: TrackingCarDatabase) = db.userDao()
+    @Provides fun provideRentalDao(db: TrackingCarDatabase) = db.rentalDao()
+
+    @Provides fun provideVehicleDao(db: TrackingCarDatabase) = db.vehicleDao()
+
+    @Provides fun provideVehicleAccessDao(db: TrackingCarDatabase) = db.vehicleAccessDao()
+
+    @Provides fun provideVehicleCheckDao(db: TrackingCarDatabase) = db.vehicleCheckDao()
 }
