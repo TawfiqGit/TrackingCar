@@ -2,38 +2,34 @@ package com.tawfiqdev.usecase
 
 import com.tawfiqdev.model.User
 import com.tawfiqdev.repository.UserRepository
-import com.tawfiqdev.utils.ErrorState
-import com.tawfiqdev.utils.ResultOutput
+import kotlin.text.isBlank
 
-class GetUserByIdUseCase (private val repository: UserRepository){
-    suspend operator fun invoke(id: Long): ResultOutput<User?, ErrorState> = repository.getUserById(id)
+class GetUserByEmailUseCase (private val repository: UserRepository){
+    suspend operator fun invoke(email : String): User = repository.getUserByEmail(email = email)
 }
 
 class InsertUserUseCase (private val repository: UserRepository) {
-    suspend operator fun invoke(input: User): ResultOutput<Unit, ErrorState>  {
+    suspend operator fun invoke(input: User): Boolean  {
         if (input.email.isBlank()){
-            return ResultOutput.Failure(ErrorState.Validation("Email is empty !"))
+            return false
         }
-        if (input.name.isBlank()){
-            return ResultOutput.Failure(ErrorState.Validation("Name is empty !"))
-        }
-        return repository.insert(input.copy(id = 0))
+        return repository.insert(input.copy(email = input.email))
     }
 }
 
 class UpdateUserUseCase (private val repository: UserRepository) {
-    suspend operator fun invoke(user: User): ResultOutput<Unit, ErrorState> {
-        if (user.id <= 0) {
-            return ResultOutput.Failure(ErrorState.Validation("Id invalide"))
+    suspend operator fun invoke(user: User): Boolean {
+        if (user.email.isBlank() || user.email.isEmpty() ){
+            return false
         }
         return repository.update(user)
     }
 }
 
 class DeleteUserUseCase (private val repository: UserRepository) {
-    suspend operator fun invoke(user: User): ResultOutput<Unit, ErrorState> {
-        if (user.id <= 0) {
-            return ResultOutput.Failure(ErrorState.Validation("Id invalide"))
+    suspend operator fun invoke(user: User): Boolean {
+        if (user.email.isBlank() || user.email.isEmpty() ){
+            return false
         }
         return repository.delete(user)
     }
