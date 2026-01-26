@@ -36,4 +36,7 @@ interface VehicleDao {
         vehicleId: String,
         status: VehicleStatus
     )
+
+    @Query("SELECT * FROM vehicles")
+    fun observeVehicles(): Flow<List<VehicleEntity>>
 }

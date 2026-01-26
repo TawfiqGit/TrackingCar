@@ -15,21 +15,18 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.tawfiqdev.design_system.R
 import com.tawfiqdev.design_system.components.ActionOutlinedButton
-import com.tawfiqdev.design_system.components.Header
 import com.tawfiqdev.design_system.theme.Colors
 import com.tawfiqdev.design_system.theme.Colors.AppBlue
 
 @Composable
 fun DashboardScreen(
     modifier: Modifier = Modifier,
-    userName: String,
     onBorrowVehicle: () -> Unit,
     onReturnVehicle: () -> Unit,
     onHistory: () -> Unit,
     onQuit: () -> Unit,
 ) {
     Column(modifier = modifier.fillMaxSize().background(Colors.White)) {
-        Header(userName = userName)
         Spacer(modifier = Modifier.height(56.dp))
 
         Column(
@@ -54,7 +51,6 @@ fun DashboardScreen(
 @Composable
 fun DashboardScreenPreview(){
     DashboardScreen(
-        userName = "Florent Delestaing",
         onBorrowVehicle = {  },
         onReturnVehicle = { },
         onHistory = { },
