@@ -26,7 +26,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.tawfiqdev.design_system.theme.Colors
 import com.tawfiqdev.design_system.theme.Colors.AppBlue
-import com.tawfiqdev.design_system.utils.Baseline5_1
 
 @Composable
 fun Header(
@@ -37,7 +36,7 @@ fun Header(
         modifier = Modifier
             .fillMaxWidth()
             .background(AppBlue)
-            .padding(horizontal = Baseline5_1, vertical = Baseline5_1)
+            .padding(top = 51.dp , bottom = 20.dp , start = 20.dp , end = 20.dp)
     ) {
         Surface(
             color = AppBlue,
@@ -72,7 +71,7 @@ fun Header(
 
                 SquareActionButton(
                     modifier = Modifier.size(52.dp).padding(2.dp),
-                    color = Colors.SoftBlue,
+                    color = Colors.White,
                     onClick = {},
                     icon = {
                         AppText(text = "≡", color= Colors.Black)

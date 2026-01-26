@@ -1,30 +1,42 @@
 package com.tawfiqdev.database.dao
 
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import androidx.room.Update
 import com.tawfiqdev.database.entity.VehicleEntity
+import com.tawfiqdev.database.entity.VehicleStatus
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface VehicleDao {
-    @Insert
-    suspend fun insert(vehicleEntity: VehicleEntity) : Long
 
-    @Update
-    suspend fun update(vehicleEntity: VehicleEntity)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertVehicles(vehicles: List<VehicleEntity>)
 
-    @Delete
-    suspend fun delete(vehicleEntity: VehicleEntity)
+    @Query("""
+        SELECT * FROM vehicles 
+        WHERE status = 'AVAILABLE'
+    """)
+    fun getAvailableVehicles(): Flow<List<VehicleEntity>>
+
+    @Query("""
+        SELECT * FROM vehicles 
+        WHERE vehicleId = :vehicleId
+        LIMIT 1
+    """)
+    suspend fun getVehicleById(vehicleId: String): VehicleEntity?
+
+    @Query("""
+        UPDATE vehicles 
+        SET status = :status 
+        WHERE vehicleId = :vehicleId
+    """)
+    suspend fun updateVehicleStatus(
+        vehicleId: String,
+        status: VehicleStatus
+    )
 
     @Query("SELECT * FROM vehicles")
-    fun observeAllCar(): Flow<List<VehicleEntity>>
-
-    @Query("SELECT * FROM vehicles WHERE id = :id")
-    fun observeCarById(id: Long): Flow<VehicleEntity>
-
-    @Query("SELECT * FROM vehicles ORDER BY vehicle_model")
-    fun observeCarByModel(): Flow<List<VehicleEntity>>
+    fun observeVehicles(): Flow<List<VehicleEntity>>
 }

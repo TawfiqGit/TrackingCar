@@ -1,8 +1,9 @@
 package com.tawfiqdev.model
 
-data class User(
-    val id: Long,
-    val name: String,
+data class User (
+    val userId: Long = 0,
+    val firstName: String,
+    val lastName: String,
     val email: String,
-    val phone: String?
+    val phone: String
 )
