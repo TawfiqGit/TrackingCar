@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="button_return">Restituer le véhicule</string>
+    <string name="button_emprunter">Emprunter le véhicule</string>
+    <string name="button_conducteurs">Mes conducteurs</string>
+    <string name="button_search_car">Trouver un véhicule</string>
+
+</resources>

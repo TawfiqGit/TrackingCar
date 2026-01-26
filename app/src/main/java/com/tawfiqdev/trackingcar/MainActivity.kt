@@ -17,10 +17,11 @@ import com.tawfiqdev.design_system.components.Header
 import com.tawfiqdev.design_system.theme.TrackingCarTheme
 import com.tawfiqdev.trackingcar.navigation.BottomNavigationBar
 import com.tawfiqdev.trackingcar.navigation.Screen
-import com.tawfiqdev.trackingcar.ui.DashboardScreen
+import com.tawfiqdev.trackingcar.ui.HomeScreen
 import com.tawfiqdev.trackingcar.ui.ProfileScreen
 import com.tawfiqdev.trackingcar.ui.ReservationScreen
 import com.tawfiqdev.trackingcar.ui.cart.CartScreen
+import com.tawfiqdev.trackingcar.ui.cart.VehicleStatus
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -51,11 +52,15 @@ fun MainScreen() {
         val graph =
             navController.createGraph(startDestination = Screen.Home.route) {
                 composable(route = Screen.Home.route) {it ->
-                    DashboardScreen(
+                    HomeScreen(
                         onBorrowVehicle = {  },
                         onReturnVehicle = { },
-                        onHistory = { },
-                        onQuit = { navController.popBackStack() }
+                        onSearchCar = { },
+                        vehicleStatus  = VehicleStatus(
+                            fuelPercent = 85,
+                            location = "Parking B",
+                            remainingTime = "2h 30m"
+                        )
                     )
                 }
                 composable(route = Screen.Cart.route) {it ->
