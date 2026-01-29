@@ -2,6 +2,7 @@ package com.tawfiqdev.mapper
 
 import com.tawfiqdev.database.entity.VehicleEntity
 import com.tawfiqdev.model.Vehicle
+import com.tawfiqdev.model.VehicleStatus
 
 fun VehicleEntity.toDomain(): Vehicle = Vehicle(
     vehicleId = vehicleId,
@@ -12,7 +13,7 @@ fun VehicleEntity.toDomain(): Vehicle = Vehicle(
     isConnected = isConnected,
     latitude = latitude,
     longitude = longitude,
-    status = com.tawfiqdev.model.VehicleStatus.AVAILABLE
+    status = VehicleStatus.AVAILABLE
 )
 
 fun Vehicle.toEntity(): VehicleEntity = VehicleEntity(
