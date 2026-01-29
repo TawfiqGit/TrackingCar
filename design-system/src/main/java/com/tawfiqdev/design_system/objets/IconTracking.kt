@@ -44,7 +44,7 @@ object IconTracking {
 
     val ClockIcon: Painter
         @Composable
-        get() = painterResource(id = R.drawable.time_icon)
+        get() = painterResource(id = R.drawable.ic_time)
 
     val AddIcon: Painter
         @Composable
@@ -60,7 +60,7 @@ object IconTracking {
 
     val LocationSelectedIcon: Painter
         @Composable
-        get() = painterResource(id = R.drawable.location)
+        get() = painterResource(id = R.drawable.ic_location)
 
     val FavoriteBorder: Painter
         @Composable

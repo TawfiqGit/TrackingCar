@@ -117,7 +117,7 @@ fun VehicleStatusCard(
     ) {
         Column {
             StatusRow(
-                icon = ImageVector.vectorResource(R.drawable.station_essence),
+                icon = ImageVector.vectorResource(R.drawable.ic_gas_station),
                 iconTint = AppBlue,
                 label = "Carburant",
                 value = "${status.fuelPercent}%",
@@ -137,7 +137,7 @@ fun VehicleStatusCard(
             DividerLight()
 
             StatusRow(
-                icon = ImageVector.vectorResource(R.drawable.time_icon),
+                icon = ImageVector.vectorResource(R.drawable.ic_time),
                 iconTint = AppBlue,
                 label = "Temps restant",
                 value = status.remainingTime,
