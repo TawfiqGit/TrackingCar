@@ -13,13 +13,12 @@ import androidx.room.PrimaryKey
             childColumns = ["userId"]
         ),
         ForeignKey(
-            entity = VehicleEntity::class,
+            entity = CarEntity::class,
             parentColumns = ["vehicleId"],
             childColumns = ["vehicleId"]
         )
     ]
 )
-
 data class ReservationEntity(
     @PrimaryKey val reservationId: String,
     val userId: String,

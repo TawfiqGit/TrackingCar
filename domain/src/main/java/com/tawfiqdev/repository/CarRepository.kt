@@ -3,6 +3,6 @@ package com.tawfiqdev.repository
 import com.tawfiqdev.model.Vehicle
 import kotlinx.coroutines.flow.Flow
 
-interface VehicleRepository {
+interface CarRepository {
     fun observeAllVehicle(): Flow<List<Vehicle>>
 }

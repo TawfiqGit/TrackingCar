@@ -3,9 +3,9 @@ package com.tawfiqdev.database.entity
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "vehicles")
-data class VehicleEntity(
-    @PrimaryKey val vehicleId: String,
+@Entity(tableName = "cars")
+data class CarEntity(
+    @PrimaryKey val id: String,
     val brand: String,
     val model: String,
     val category: String,
@@ -13,10 +13,10 @@ data class VehicleEntity(
     val isConnected: Boolean,
     val latitude: Double,
     val longitude: Double,
-    val status: VehicleStatus
+    val status: CarStatus
 )
 
-enum class VehicleStatus {
+enum class CarStatus {
     AVAILABLE,
     RESERVED,
     IN_USE,

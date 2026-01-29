@@ -1,11 +1,11 @@
 package com.tawfiqdev.mapper
 
-import com.tawfiqdev.database.entity.VehicleEntity
+import com.tawfiqdev.database.entity.CarEntity
 import com.tawfiqdev.model.Vehicle
-import com.tawfiqdev.model.VehicleStatus
+import com.tawfiqdev.model.CarStatus
 
-fun VehicleEntity.toDomain(): Vehicle = Vehicle(
-    vehicleId = vehicleId,
+fun CarEntity.toDomain(): Vehicle = Vehicle(
+    vehicleId = id,
     brand = brand,
     model = model,
     category = category,
@@ -13,11 +13,11 @@ fun VehicleEntity.toDomain(): Vehicle = Vehicle(
     isConnected = isConnected,
     latitude = latitude,
     longitude = longitude,
-    status = VehicleStatus.AVAILABLE
+    status = CarStatus.AVAILABLE
 )
 
-fun Vehicle.toEntity(): VehicleEntity = VehicleEntity(
-    vehicleId = vehicleId,
+fun Vehicle.toEntity(): CarEntity = CarEntity(
+    id = vehicleId,
     brand = brand,
     model = model,
     category = category,
@@ -25,5 +25,5 @@ fun Vehicle.toEntity(): VehicleEntity = VehicleEntity(
     isConnected = isConnected,
     latitude = latitude,
     longitude = longitude,
-    status = com.tawfiqdev.database.entity.VehicleStatus.AVAILABLE
+    status = com.tawfiqdev.database.entity.CarStatus.AVAILABLE
 )

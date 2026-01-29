@@ -18,7 +18,6 @@ import javax.inject.Singleton
 @Module // Utilisée pour regrouper et fournir des dépendances
 @InstallIn(SingletonComponent::class)
 class DatabaseModule {
-
     @Provides //Créez l'objet vous-même
     @Singleton
     fun provideDatabase(@ApplicationContext appContext: Context) : TrackingCarDatabase {
@@ -28,7 +27,7 @@ class DatabaseModule {
                 TrackingCarDatabase::class.java,
                 "trackingCarDatabase"
             )
-            .fallbackToDestructiveMigration()
+            .fallbackToDestructiveMigration(true)
             .build()
     }
 
@@ -40,7 +39,7 @@ class DatabaseModule {
 
     @Provides fun provideRentalDao(db: TrackingCarDatabase) = db.rentalDao()
 
-    @Provides fun provideVehicleDao(db: TrackingCarDatabase) = db.vehicleDao()
+    @Provides fun provideCarDao(db: TrackingCarDatabase) = db.carDao()
 
     @Provides fun provideVehicleAccessDao(db: TrackingCarDatabase) = db.vehicleAccessDao()
 
