@@ -1,7 +1,7 @@
 package com.tawfiqdev.model
 
-data class Vehicle(
-    val id: String,
+data class Car(
+    val carId: Int,
     val brand: String,
     val model: String,
     val category: String,

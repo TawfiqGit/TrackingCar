@@ -1,11 +1,11 @@
 package com.tawfiqdev.mapper
 
 import com.tawfiqdev.database.entity.CarEntity
-import com.tawfiqdev.model.Vehicle
+import com.tawfiqdev.model.Car
 import com.tawfiqdev.model.CarStatus
 
-fun CarEntity.toDomain(): Vehicle = Vehicle(
-    vehicleId = id,
+fun CarEntity.toDomain(): Car = Car(
+    carId = carId,
     brand = brand,
     model = model,
     category = category,
@@ -16,8 +16,8 @@ fun CarEntity.toDomain(): Vehicle = Vehicle(
     status = CarStatus.AVAILABLE
 )
 
-fun Vehicle.toEntity(): CarEntity = CarEntity(
-    id = vehicleId,
+fun Car.toEntity(): CarEntity = CarEntity(
+    carId = carId,
     brand = brand,
     model = model,
     category = category,

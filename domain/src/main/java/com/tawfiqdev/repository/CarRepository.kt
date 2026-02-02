@@ -1,8 +1,8 @@
 package com.tawfiqdev.repository
 
-import com.tawfiqdev.model.Vehicle
-import kotlinx.coroutines.flow.Flow
+import com.tawfiqdev.model.Car
 
 interface CarRepository {
-    fun observeAllVehicle(): Flow<List<Vehicle>>
+    suspend fun getListCars(): List<Car>
+    suspend fun insert(car: Car): Boolean
 }
