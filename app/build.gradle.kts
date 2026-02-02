@@ -1,4 +1,5 @@
 import org.gradle.kotlin.dsl.implementation
+import org.jetbrains.kotlin.gradle.internal.Kapt3GradleSubplugin.Companion.findKaptConfiguration
 
 plugins {
     alias(libs.plugins.android.application)
@@ -74,4 +75,5 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     //----------------------------------------------------------------------------
     implementation(project(":design-system"))
+    implementation(project(":domain"))
 }
