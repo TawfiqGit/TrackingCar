@@ -21,21 +21,21 @@ interface CarDao {
 
     @Query("""
         SELECT * FROM cars 
-        WHERE id = :vehicleId
+        WHERE carId = :carId
         LIMIT 1
     """)
-    suspend fun getVehicleById(vehicleId: String): CarEntity?
+    suspend fun getVehicleById(carId: String): CarEntity?
 
     @Query("""
         UPDATE cars 
         SET status = :status 
-        WHERE id = :vehicleId
+        WHERE carId = :carId
     """)
     suspend fun updateVehicleStatus(
-        vehicleId: String,
+        carId: String,
         status: CarStatus
     )
 
     @Query("SELECT * FROM cars")
-    fun observeVehicles(): Flow<List<CarEntity>>
+    suspend fun getCars(): List<CarEntity>
 }
