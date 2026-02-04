@@ -20,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -29,20 +30,22 @@ import com.tawfiqdev.design_system.theme.Colors.AppBlue
 
 @Composable
 fun Header(
-    userName: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    title: String,
+    icon : ImageVector = Icons.Outlined.AccountCircle,
+    isEnableAction : Boolean = false
 ) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .background(AppBlue)
             .padding(top = 51.dp , bottom = 20.dp , start = 20.dp , end = 20.dp)
     ) {
         Surface(
-            color = AppBlue,
+            color = Color.Transparent,
             tonalElevation = 0.dp,
             shadowElevation = 0.dp,
-            modifier = modifier
+            modifier = Modifier
                 .fillMaxWidth()
                 .height(54.dp)
         ) {
@@ -51,7 +54,7 @@ fun Header(
             ) {
                 Box(modifier = Modifier.size(56.dp)) {
                     Icon(
-                        imageVector = Icons.Outlined.AccountCircle,
+                        imageVector = icon,
                         contentDescription = "Profil",
                         tint = Color.White,
                         modifier = Modifier.fillMaxSize()
@@ -63,20 +66,21 @@ fun Header(
                         .fillMaxSize()
                         .weight(1f)
                         .wrapContentHeight(align = Alignment.CenterVertically),
-                    text = userName,
+                    text = title,
                     color = Color.White,
                     fontSize = 24.sp,
                     overflow = TextOverflow.Ellipsis
                 )
-
-                SquareActionButton(
-                    modifier = Modifier.size(52.dp).padding(2.dp),
-                    color = Colors.White,
-                    onClick = {},
-                    icon = {
-                        AppText(text = "≡", color= Colors.Black)
-                    }
-                )
+                if (isEnableAction){
+                    SquareActionButton(
+                        modifier = Modifier.size(52.dp).padding(2.dp),
+                        color = Colors.White,
+                        onClick = {},
+                        icon = {
+                            AppText(text = "≡", color= Colors.Black)
+                        }
+                    )
+                }
             }
         }
     }
@@ -85,5 +89,5 @@ fun Header(
 @Preview
 @Composable
 fun TopBarPreview() {
-    Header(userName = "India")
+    Header(title = "India")
 }

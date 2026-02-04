@@ -158,7 +158,10 @@ fun CardActionButton(
                 text = title,
                 color = contentColor,
                 fontSize = fontSize,
-                textAlignment = TextAlign.Center
+                textAlignment = TextAlign.Center,
+                onClick = {
+                    onClick()
+                }
             )
         }
     }

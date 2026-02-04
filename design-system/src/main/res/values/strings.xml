@@ -4,5 +4,9 @@
     <string name="button_emprunter">Emprunter le véhicule</string>
     <string name="button_conducteurs">Mes conducteurs</string>
     <string name="button_search_car">Trouver un véhicule</string>
+    <string name="borrow_car_title">Emprunter le véhicule</string>
+    <string name="scan_qr_title">Scan QR Code</string>
+    <string name="scan_qr_subtitle">Placez le QR code à l’intérieur du cadre</string>
+    <string name="return_button">Retour</string>
 
 </resources>

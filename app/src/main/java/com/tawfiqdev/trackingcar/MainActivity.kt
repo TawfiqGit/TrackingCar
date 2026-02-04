@@ -8,15 +8,19 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.createGraph
 import com.tawfiqdev.design_system.components.Header
 import com.tawfiqdev.design_system.theme.TrackingCarTheme
 import com.tawfiqdev.trackingcar.navigation.BottomNavigationBar
 import com.tawfiqdev.trackingcar.navigation.Screen
+import com.tawfiqdev.trackingcar.ui.BorrowCarScreen
 import com.tawfiqdev.trackingcar.ui.HomeScreen
 import com.tawfiqdev.trackingcar.ui.ProfileScreen
 import com.tawfiqdev.trackingcar.ui.ReservationScreen
@@ -40,10 +44,19 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainScreen() {
     val navController = rememberNavController()
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentRoute = navBackStackEntry?.destination?.route
+    val showChrome = currentRoute != Screen.BorrowCar.route
+
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = {
-            Header(userName = "Tawfiq MOUTTALIF")
+            if (showChrome) {
+                Header(
+                    title = "Tawfiq MOUTTALIF",
+                    isEnableAction = true
+                )
+            }
         },
         bottomBar = {
             BottomNavigationBar(navController)
@@ -53,7 +66,9 @@ fun MainScreen() {
             navController.createGraph(startDestination = Screen.Home.route) {
                 composable(route = Screen.Home.route) {it ->
                     HomeScreen(
-                        onBorrowVehicle = {  },
+                        onBorrowVehicle = {
+                            navController.navigate(Screen.BorrowCar.route)
+                        },
                         onReturnVehicle = { },
                         onSearchCar = { },
                         vehicleStatus  = VehicleStatus(
@@ -72,6 +87,11 @@ fun MainScreen() {
                 composable(route = Screen.Profile.route) { it ->
                     ProfileScreen()
                 }
+                composable(route = Screen.BorrowCar.route) {
+                    BorrowCarScreen(
+                        onBackClick = { navController.navigateUp() }
+                    )
+                }
             }
         NavHost(
             navController = navController,
@@ -79,4 +99,10 @@ fun MainScreen() {
             modifier = Modifier.padding(innerPadding)
         )
     }
+}
+
+@Preview
+@Composable
+fun MainScreenPreview() {
+    MainScreen()
 }
